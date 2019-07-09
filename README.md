@@ -5,9 +5,10 @@ This Project shows how to get from a sync execution of the SomeService method to
 + Using @EnableAsync and @Aysnc annotated methods
 
 sample output when calling
-localhost:8080/saySync?something=test
-localhost:8080/sayAsync?something=test
-localhost:8080/sayAsyncOther?something=test
+
++ localhost:8080/saySync?something=test
++ localhost:8080/sayAsync?something=test
++ localhost:8080/sayAsyncOther?something=test
 
 ```
 2019-07-09 13:38:11.639  INFO 65711 --- [ctor-http-nio-3] d.s.async.mono.demo.SampleController     : start saySync
@@ -23,3 +24,7 @@ localhost:8080/sayAsyncOther?something=test
 2019-07-09 13:38:28.828  INFO 65711 --- [ctor-http-nio-3] dev.silas.async.mono.demo.SomeService    : start say
 2019-07-09 13:38:30.830  INFO 65711 --- [ctor-http-nio-3] dev.silas.async.mono.demo.SomeService    : start say
 ```
+
+so the direct call is in the same threadpool
+the @Async Method spawns a threadpool
+the direct Mono.create() uses the same Thread
