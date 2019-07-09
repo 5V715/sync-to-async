@@ -25,6 +25,6 @@ sample output when calling
 2019-07-09 13:38:30.830  INFO 65711 --- [ctor-http-nio-3] dev.silas.async.mono.demo.SomeService    : start say
 ```
 
-so the direct call is in the same threadpool
-the @Async Method spawns a threadpool
-the direct Mono.create() uses the same Thread
++ so the direct call is in the same threadpool
++ the @Async Method spawns a threadpool
++ the direct Mono.create() uses the same Thread
